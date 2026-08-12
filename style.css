@@ -1,0 +1,1146 @@
+/* ============================================
+   🌸 CARTA DE ANIVERSÁRIO
+   ESTILO PRINCIPAL
+============================================ */
+
+:root {
+
+    --pink-light: #ffe4ec;
+    --pink: #ffb6c1;
+    --pink-deep: #ff6b8a;
+    --rose: #e75480;
+    --white: #fff;
+    --gold: #f9d56e;
+
+    --soft-shadow:
+        0 4px 20px rgba(255, 107, 138, 0.2);
+
+    --font-cursive:
+        'Georgia',
+        'Times New Roman',
+        serif;
+
+    --font-main:
+        'Segoe UI',
+        Arial,
+        sans-serif;
+}
+
+
+/* ============================================
+   🌸 BODY
+============================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    font-family: var(--font-main);
+
+    background:
+        linear-gradient(
+            135deg,
+            #fce4ec 0%,
+            #f8bbd0 30%,
+            #f48fb1 60%,
+            #fce4ec 100%
+        );
+
+    background-size: 400% 400%;
+
+    animation:
+        gradientShift 12s ease infinite;
+
+    touch-action: manipulation;
+
+    user-select: none;
+}
+
+@keyframes gradientShift {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* ============================================
+   🌟 PARTÍCULAS
+============================================ */
+
+.particles-bg {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.particle {
+
+    position: absolute;
+
+    pointer-events: none;
+
+    animation:
+        floatUp linear infinite;
+
+    opacity: 0;
+
+    font-size: 1.5rem;
+}
+
+@keyframes floatUp {
+
+    0% {
+
+        transform:
+            translateY(105vh)
+            rotate(0deg)
+            scale(.3);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .8;
+    }
+
+    100% {
+
+        transform:
+            translateY(-10vh)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* ============================================
+   📱 TELAS
+============================================ */
+
+.screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    transform: scale(.95);
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.screen.active {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    pointer-events: all;
+}
+
+
+/* ============================================
+   💖 INÍCIO
+============================================ */
+
+.welcome-inner {
+
+    text-align: center;
+
+    padding: 2rem;
+
+    z-index: 2;
+}
+
+.welcome-icons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: .5rem;
+
+    margin-bottom: 1.5rem;
+
+    flex-wrap: wrap;
+}
+
+.welcome-icons span {
+
+    font-size: 2rem;
+
+    display: inline-block;
+
+    animation:
+        iconBounce 2s ease-in-out infinite;
+}
+
+.welcome-icons span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.welcome-icons span:nth-child(2) {
+    animation-delay: .3s;
+}
+
+.welcome-icons span:nth-child(3) {
+    animation-delay: .6s;
+}
+
+.welcome-icons span:nth-child(4) {
+    animation-delay: .9s;
+}
+
+.welcome-icons span:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.welcome-icons span:nth-child(6) {
+    animation-delay: 1.5s;
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.welcome-title {
+
+    font-family: var(--font-cursive);
+
+    font-size: 2.2rem;
+
+    color: var(--rose);
+
+    margin-bottom: .8rem;
+
+    text-shadow:
+        0 2px 10px
+        rgba(231,84,128,.3);
+}
+
+.welcome-subtitle {
+
+    font-size: 1.1rem;
+
+    color: #c94c6e;
+
+    margin-bottom: 2.5rem;
+
+    font-style: italic;
+}
+
+
+/* ============================================
+   💝 BOTÃO COMEÇAR
+============================================ */
+
+.btn-start {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: .6rem;
+
+    padding: 1rem 2.5rem;
+
+    font-size: 1.2rem;
+
+    font-family: var(--font-cursive);
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f48fb1,
+            #e75480
+        );
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 25px
+        rgba(231,84,128,.4);
+
+    animation:
+        pulse 2s ease-in-out infinite;
+}
+
+.btn-start:active {
+
+    transform: scale(.95);
+}
+
+
+/* ============================================
+   📸 FOTOS
+============================================ */
+
+.photo-stage {
+
+    text-align: center;
+
+    z-index: 2;
+
+    width: 90%;
+
+    max-width: 380px;
+}
+
+.photo-frame {
+
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 4px solid var(--pink);
+
+    box-shadow:
+        0 10px 40px
+        rgba(231,84,128,.35);
+
+    cursor: pointer;
+}
+
+.photo-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe4ec,
+            #ffd1dc
+        );
+}
+
+.photo-placeholder img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.photo-emoji {
+
+    font-size: 4rem;
+}
+
+.photo-hint {
+
+    color: #c94c6e;
+
+    font-style: italic;
+}
+
+.photo-message {
+
+    min-height: 3.5rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 1rem;
+
+    font-family: var(--font-cursive);
+
+    font-size: 1.2rem;
+
+    color: var(--rose);
+}
+
+.photo-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: .6rem;
+
+    margin-top: .8rem;
+}
+
+.photo-dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(231,84,128,.3);
+}
+
+.photo-dot.active {
+
+    background: var(--rose);
+
+    transform: scale(1.4);
+}
+
+.photo-instruction {
+
+    color: #c94c6e;
+
+    font-size: .85rem;
+
+    font-style: italic;
+}
+
+
+/* ============================================
+   🌸 PÉTALAS
+============================================ */
+
+.petals-falling {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.petal {
+
+    position: absolute;
+
+    animation:
+        petalFall linear infinite;
+}
+
+@keyframes petalFall {
+
+    0% {
+
+        transform:
+            translateY(-10vh)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ============================================
+   ❤️ AMOR
+============================================ */
+
+.love-inner {
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.love-question {
+
+    font-family: var(--font-cursive);
+
+    font-size: 2.2rem;
+
+    color: var(--rose);
+
+    margin-bottom: 2.5rem;
+
+    animation:
+        heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.12);
+    }
+}
+
+.love-buttons {
+
+    display: flex;
+
+    gap: 1.5rem;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+.btn-love {
+
+    padding: 1rem 2.2rem;
+
+    font-size: 1.3rem;
+
+    font-family: var(--font-cursive);
+
+    border: none;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    box-shadow: var(--soft-shadow);
+}
+
+.btn-yes {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b8a,
+            #e75480
+        );
+
+    color: white;
+}
+
+.btn-no {
+
+    background: #f0f0f0;
+
+    color: #999;
+
+    position: relative;
+}
+
+.love-reaction {
+
+    margin-top: 2rem;
+
+    font-size: 3rem;
+
+    min-height: 4rem;
+}
+
+
+/* ============================================
+   💌 DECLARAÇÃO
+============================================ */
+
+.declaration-inner {
+
+    width: 90%;
+
+    max-width: 420px;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+.declaration-text {
+
+    font-family: var(--font-cursive);
+
+    font-size: 1.3rem;
+
+    color: var(--rose);
+
+    line-height: 1.8;
+}
+
+.phrase {
+
+    animation:
+        phraseAppear .7s ease both;
+}
+
+@keyframes phraseAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ============================================
+   ✉️ ENVELOPE
+============================================ */
+
+.envelope-inner {
+
+    text-align: center;
+
+    width: 100%;
+
+    z-index: 2;
+}
+
+.envelope-hint {
+
+    font-family: var(--font-cursive);
+
+    color: #c94c6e;
+
+    margin-bottom: 1.5rem;
+}
+
+.envelope-wrapper {
+
+    position: relative;
+
+    width: 300px;
+
+    height: 360px;
+
+    margin: auto;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+.envelope {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 200px;
+
+    bottom: 0;
+
+    left: 0;
+
+    z-index: 2;
+}
+
+.envelope-body {
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 180px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8bbd0,
+            #f48fb1
+        );
+
+    border-radius:
+        8px 8px 20px 20px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(231,84,128,.3);
+}
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0;
+
+    height: 0;
+
+    border-left:
+        150px solid transparent;
+
+    border-right:
+        150px solid transparent;
+
+    border-top:
+        90px solid #e75480;
+
+    z-index: 6;
+
+    transform-origin: top center;
+
+    transition:
+        transform .7s ease;
+}
+
+.envelope-seal {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 2.5rem;
+
+    z-index: 7;
+}
+
+
+/* ============================================
+   💌 PAPEL
+============================================ */
+
+.letter-paper {
+
+    position: absolute;
+
+    bottom: 40px;
+
+    left: 50%;
+
+    width: 85%;
+
+    max-height: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #fffef9;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,.1);
+
+    z-index: 5;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+    transition:
+        max-height .8s ease,
+        padding .8s ease,
+        transform .8s ease;
+}
+
+.envelope-wrapper.opened
+.letter-paper {
+
+    max-height: 320px;
+
+    padding: 1.5rem;
+
+    transform:
+        translateX(-50%)
+        translateY(-150px);
+}
+
+.envelope-wrapper.opened
+.envelope-flap {
+
+    transform:
+        rotateX(180deg);
+}
+
+.envelope-wrapper.opened
+.envelope-seal {
+
+    opacity: 0;
+
+    transition:
+        opacity .3s ease;
+}
+
+.letter-content {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: .9rem;
+
+    color: #5a3e4b;
+
+    line-height: 1.7;
+
+    text-align: left;
+
+    white-space: pre-wrap;
+}
+
+.char {
+
+    opacity: 0;
+
+    animation:
+        typeIn .03s ease forwards;
+}
+
+@keyframes typeIn {
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ============================================
+   ❤️ BOTÃO CONTINUAR
+============================================ */
+
+.continue-button {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform:
+        translateX(-50%);
+
+    padding: .9rem 2rem;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b8a,
+            #e75480
+        );
+
+    color: white;
+
+    font-family: var(--font-cursive);
+
+    font-size: 1.1rem;
+
+    box-shadow:
+        0 6px 20px
+        rgba(231,84,128,.4);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity .5s ease,
+        transform .3s ease;
+
+    z-index: 20;
+}
+
+.continue-button.show {
+
+    opacity: 1;
+
+    pointer-events: all;
+}
+
+
+/* ============================================
+   🎉 FINAL
+============================================ */
+
+.final-inner {
+
+    text-align: center;
+
+    padding: 2rem;
+
+    z-index: 2;
+}
+
+.final-title {
+
+    font-family: var(--font-cursive);
+
+    font-size: 2.5rem;
+
+    color: var(--rose);
+
+    animation:
+        heartBeat 1.2s infinite;
+}
+
+.final-message {
+
+    white-space: pre-line;
+
+    font-family: var(--font-cursive);
+
+    font-size: 1.2rem;
+
+    color: #c94c6e;
+
+    line-height: 1.8;
+}
+
+.final-hearts {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: .5rem;
+
+    margin-top: 1.5rem;
+
+    font-size: 2.5rem;
+}
+
+.final-hearts span {
+
+    animation:
+        iconBounce 2s ease-in-out infinite;
+}
+
+
+/* ============================================
+   🎊 CONFETES
+============================================ */
+
+.confetti-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+.confetti-piece {
+
+    position: absolute;
+
+    top: -5%;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ============================================
+   🎵 MÚSICA
+============================================ */
+
+.music-toggle {
+
+    position: fixed;
+
+    bottom: 1.5rem;
+
+    right: 1.5rem;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.9);
+
+    box-shadow:
+        0 4px 15px
+        rgba(231,84,128,.25);
+
+    font-size: 1.4rem;
+
+    cursor: pointer;
+
+    z-index: 30;
+}
+
+
+/* ============================================
+   📱 CELULAR
+============================================ */
+
+@media (max-width: 360px) {
+
+    .welcome-title {
+        font-size: 1.7rem;
+    }
+
+    .love-question {
+        font-size: 1.7rem;
+    }
+
+    .btn-love {
+        padding: .8rem 1.6rem;
+    }
+
+    .envelope-wrapper {
+
+        width: 260px;
+
+        height: 320px;
+    }
+
+    .envelope {
+
+        height: 170px;
+    }
+
+    .envelope-body {
+
+        height: 150px;
+    }
+
+    .envelope-flap {
+
+        border-left-width: 130px;
+
+        border-right-width: 130px;
+
+        border-top-width: 75px;
+    }
+
+    .envelope-wrapper.opened
+    .letter-paper {
+
+        max-height: 280px;
+
+        transform:
+            translateX(-50%)
+            translateY(-130px);
+    }
+
+    .letter-content {
+
+        font-size: .78rem;
+
+        line-height: 1.5;
+    }
+}

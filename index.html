@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <title>Carta de Aniversário 💌</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 🌸 Partículas -->
+    <div class="particles-bg" id="particlesBg"></div>
+
+    <!-- =========================================
+         💖 TELA 1 — INÍCIO
+    ========================================== -->
+
+    <section class="screen active" id="screenWelcome">
+
+        <div class="welcome-inner">
+
+            <div class="welcome-icons">
+                <span>🌸</span>
+                <span>💖</span>
+                <span>⭐</span>
+                <span>🌷</span>
+                <span>💕</span>
+                <span>✨</span>
+            </div>
+
+            <h1 class="welcome-title">
+                Oi, meu amor... ❤️
+            </h1>
+
+            <p class="welcome-subtitle">
+                Preparei uma pequena surpresa para você...
+            </p>
+
+            <button class="btn-start" id="btnStart">
+                Começar
+                <span>💝</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         📸 TELA 2 — FOTOS
+    ========================================== -->
+
+    <section class="screen" id="screenPhotos">
+
+        <div class="photo-stage">
+
+            <div class="photo-frame">
+
+                <div
+                    class="photo-placeholder"
+                    id="photoPlaceholder">
+                </div>
+
+            </div>
+
+            <div
+                class="photo-message"
+                id="photoMessage">
+            </div>
+
+            <div
+                class="photo-dots"
+                id="photoDots">
+            </div>
+
+            <p class="photo-instruction">
+                Toque na foto para continuar 💕
+            </p>
+
+        </div>
+
+        <div
+            class="petals-falling"
+            id="petalsContainer">
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ❤️ TELA 3 — VOCÊ ME AMA?
+    ========================================== -->
+
+    <section class="screen" id="screenLove">
+
+        <div class="love-inner">
+
+            <h2 class="love-question">
+                Você me ama? ❤️
+            </h2>
+
+            <div class="love-buttons">
+
+                <button
+                    class="btn-love btn-yes"
+                    id="btnYes">
+                    Sim 💖
+                </button>
+
+                <button
+                    class="btn-love btn-no"
+                    id="btnNo">
+                    Não 💔
+                </button>
+
+            </div>
+
+            <div
+                class="love-reaction"
+                id="loveReaction">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         💕 TELA 4 — DECLARAÇÃO
+    ========================================== -->
+
+    <section
+        class="screen"
+        id="screenDeclaration">
+
+        <div class="declaration-inner">
+
+            <div
+                class="declaration-text"
+                id="declarationText">
+            </div>
+
+            <div
+                class="declaration-hearts"
+                id="declarationHearts">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ✉️ TELA 5 — ENVELOPE
+    ========================================== -->
+
+    <section
+        class="screen"
+        id="screenEnvelope">
+
+        <div class="envelope-inner">
+
+            <p class="envelope-hint">
+                Toque no envelope para abrir... 💌
+            </p>
+
+            <div
+                class="envelope-wrapper"
+                id="envelopeWrapper">
+
+                <!-- Envelope -->
+                <div class="envelope">
+
+                    <div class="envelope-flap"></div>
+
+                    <div class="envelope-body">
+
+                        <div class="envelope-seal">
+                            💌
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Carta -->
+                <div
+                    class="letter-paper"
+                    id="letterPaper">
+
+                    <div
+                        class="letter-content"
+                        id="letterContent">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         💌 BOTÃO CONTINUAR
+    ========================================== -->
+
+    <button
+        class="continue-button"
+        id="continueButton">
+
+        Continuar ❤️
+
+    </button>
+
+
+    <!-- =========================================
+         🎉 TELA FINAL
+    ========================================== -->
+
+    <section
+        class="screen"
+        id="screenFinal">
+
+        <div class="final-inner">
+
+            <h2
+                class="final-title"
+                id="finalTitle">
+            </h2>
+
+            <p
+                class="final-message"
+                id="finalMessage">
+            </p>
+
+            <div
+                class="final-hearts"
+                id="finalHearts">
+            </div>
+
+        </div>
+
+        <div
+            class="confetti-container"
+            id="confettiContainer">
+        </div>
+
+    </section>
+
+
+    <!-- 🎵 Controle da música -->
+
+    <button
+        class="music-toggle"
+        id="musicToggle"
+        title="Música">
+
+        🔇
+
+    </button>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
